@@ -1,0 +1,12 @@
+[tool.pytest.ini_options]
+pythonpath = ["pi"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 120
+src = ["pi", "tests"]
+extend-exclude = ["pi/Touch_e-Paper_HAT", "pi/e-Paper"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]

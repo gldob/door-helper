@@ -1,0 +1,26 @@
+# Secrets
+.env
+!.env.example
+
+# Persönliche Abfuhrkalender (verraten die Wohnadresse/Sammelzone)
+*.ics
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Herstellercode von Waveshare – wird separat installiert (siehe README)
+pi/E-Paper_code.zip
+pi/e-Paper/
+pi/Touch_e-Paper_HAT/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

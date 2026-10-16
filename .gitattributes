@@ -1,0 +1,3 @@
+# Der Code läuft auf dem Raspberry Pi: immer LF-Zeilenenden, auch bei Checkout unter Windows
+* text=auto eol=lf
+*.png binary

@@ -1,0 +1,5 @@
+-r pi/requirements.txt
+pytest>=7
+ruff>=0.5
+# Zeitzonendaten für zoneinfo unter Windows (Linux bringt sie mit)
+tzdata; sys_platform == "win32"
