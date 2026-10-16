@@ -1,5 +1,8 @@
 # door-helper
 
+[![CI](https://github.com/gldob/door-helper/actions/workflows/ci.yml/badge.svg)](https://github.com/gldob/door-helper/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Ein kleines Info-Display für die Wohnungstür: Ein Raspberry Pi mit einem 2.13" Touch-E-Ink-Display von Waveshare zeigt auf einen Blick, ob man gleich los muss.
 
 - **Abfahrten** – Live-Abfahrten einer Haltestelle in der Schweiz (OJP 2.0 / opentransportdata.swiss), inkl. Hinweis auf Störungen
@@ -50,7 +53,7 @@ E-Ink-Panels kennen zwei Arten der Aktualisierung:
 3. **Projekt klonen und Python-Abhängigkeiten installieren**
 
    ```bash
-   git clone https://github.com/<user>/door-helper.git
+   git clone https://github.com/gldob/door-helper.git
    cd door-helper/pi
    pip3 install -r requirements.txt
    ```
@@ -177,3 +180,7 @@ GitHub Actions führt beides bei jedem Push aus (Python 3.9 und 3.12). Die Bilds
 - Wetter: [Open-Meteo](https://open-meteo.com/) (CC BY 4.0)
 - Velos: [Nextbike](https://www.nextbike.ch/) Live-Feed
 - Display-Treiber: [waveshare/Touch_e-Paper_HAT](https://github.com/waveshare/Touch_e-Paper_HAT) (MIT)
+
+## Lizenz
+
+[MIT](LICENSE) © [gldob](https://github.com/gldob)
