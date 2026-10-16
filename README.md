@@ -110,18 +110,24 @@ Beenden mit `Strg+C`. Das Display wird dabei geleert, in den Tiefschlaf versetzt
 ```ini
 [Unit]
 Description=door-helper E-Ink-Display
-After=network-online.target
+After=network-online.target time-sync.target
 Wants=network-online.target
+# Nie aufgeben: ohne diese Zeile stoppt systemd nach 5 Fehlstarts in 10 s endgültig
+StartLimitIntervalSec=0
 
 [Service]
 User=pi
-WorkingDirectory=/home/pi/door-helper/pi
+WorkingDirectory=/home/pi/
 ExecStart=/usr/bin/python3 -u main.py
-Restart=on-failure
+# Bei jedem Ende neu starten (Absturz, Fehler, unerwartetes Beenden) – nur nicht nach `systemctl stop`
+Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
 ```
+
+Damit läuft der Dienst nach einem Stromausfall oder Neustart des Pi automatisch wieder an (`WantedBy=multi-user.target` + `enable`). Stürzt das Skript ab, z. B. weil das Netzwerk beim Booten noch nicht bereit ist, wird es alle 10 Sekunden neu gestartet, ohne Begrenzung der Versuche.
 
 ```bash
 sudo systemctl daemon-reload            # nach dem Anlegen/Ändern der .service-Datei
